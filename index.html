@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ExecutiveBrand – Your LinkedIn Growth Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f9f9ff; --ink:#161c26; --muted:#45474c; --blue:#0051d5; --blue2:#316bf3;
+  --navy:#141b2c; --lime:#c4f269; --limeink:#141f00; --dark:#0b1120; --light:#f0f3ff;
+  --line:#c6c6cd; --slate:#7c8498; --chip:#e3e8f7;
+  --pj:'Plus Jakarta Sans',sans-serif; --mn:'Manrope',sans-serif; --in:'Inter',sans-serif;
+  --pad:80px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--in);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.ic{display:block;flex:none;fill:currentColor}
+section,footer{scroll-margin-top:72px}
+.container{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-family:var(--mn);font-weight:700;font-size:12px;line-height:16px;letter-spacing:1.2px;text-transform:uppercase}
+h2.h2{font-family:var(--pj);font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1.1667;letter-spacing:-1.2px}
+.lead{font-family:var(--in);font-size:18px;line-height:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;font-family:var(--mn);font-weight:700;font-size:16px;line-height:22px;padding:16px 28px;transition:transform .15s,box-shadow .15s,filter .15s;text-align:center}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.btn-navy{background:var(--navy);color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.1),0 4px 6px rgba(0,0,0,.1)}
+.btn-lime{background:var(--lime);color:var(--limeink);box-shadow:0 4px 6px rgba(0,0,0,.1),0 10px 15px rgba(0,0,0,.1)}
+.btn-ghost{background:#fff;color:var(--ink);border:1px solid rgba(198,198,205,.6);font-weight:600;padding:16px 24px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--blue)}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:50;background:rgba(249,249,255,.9);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(198,198,205,.3);box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.header .container{height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:8px}
+.brand-mark{width:36px;height:36px;border-radius:8px;background:var(--navy);display:grid;place-items:center;color:var(--lime);box-shadow:0 2px 4px rgba(0,0,0,.1),0 4px 6px rgba(0,0,0,.1)}
+.brand-name{font-family:var(--pj);font-weight:700;font-size:24px;line-height:32px;letter-spacing:-.6px;color:var(--ink)}
+.nav{display:flex;gap:32px;align-items:center}
+.nav a{font-family:var(--mn);font-weight:500;font-size:14px;line-height:18px;color:var(--muted);padding-bottom:4px;border-bottom:2px solid transparent}
+.nav a.active{color:var(--blue);font-weight:700;border-color:var(--blue)}
+.nav a:hover{color:var(--blue)}
+.head-cta{background:var(--navy);color:#fff;border-radius:8px;padding:10px 20px;font-family:var(--mn);font-weight:600;font-size:14px;line-height:18px;white-space:nowrap}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:96px 0}
+.glow{position:absolute;border-radius:50%;pointer-events:none}
+.hero .g1{left:50%;top:128px;width:700px;height:450px;margin-left:-350px;background:rgba(49,107,243,.10);filter:blur(130px)}
+.hero .g2{right:0;top:-31px;width:288px;height:288px;background:rgba(196,242,105,.2);filter:blur(100px)}
+.hero-grid{position:relative;display:grid;grid-template-columns:640fr 448fr;gap:32px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--chip);border:1px solid rgba(198,198,205,.4);border-radius:999px;padding:6px 14px}
+.badge i{width:10px;height:10px;border-radius:50%;background:var(--lime);border:1px solid #141f00;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.badge span{font-family:var(--mn);font-weight:700;font-size:12px;line-height:16px;letter-spacing:.6px}
+.hero-left{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.hero h1{font-family:var(--pj);font-weight:800;font-size:clamp(40px,5.2vw,64px);line-height:1.125;letter-spacing:-1.6px}
+.grad{background:linear-gradient(90deg,#0051d5,#316bf3);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hero p.lead{color:var(--muted);max-width:640px}
+.cta-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding-top:8px}
+.trust{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(198,198,205,.3);padding-top:24px;width:100%;flex-wrap:wrap}
+.avatars{display:flex}
+.av{width:32px;height:32px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;font-family:var(--mn);font-weight:700;font-size:12px}
+.av+.av{margin-left:-8px}
+.trust-text{font-size:14px;line-height:20px;color:var(--muted);font-weight:500}
+.trust-text b{color:var(--ink);font-weight:700}
+
+.mock{position:relative;width:100%;max-width:448px;height:595px;margin:0 auto}
+.mock-main{position:absolute;left:0;top:0;width:100%;height:300px;background:#fff;border:1px solid rgba(198,198,205,.5);border-radius:16px;padding:20px;box-shadow:0 25px 50px rgba(0,0,0,.25)}
+.banner{height:80px;border-radius:12px;background:linear-gradient(90deg,#141b2c,#316bf3 50%,#141b2c);display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+.banner .mono{font-family:'Liberation Mono',ui-monospace,Menlo,Consolas,monospace;font-weight:700;font-size:12px;letter-spacing:.6px;color:var(--lime);opacity:.8;text-transform:uppercase}
+.banner .ic{color:rgba(255,255,255,.3)}
+.prof{padding:0 8px 4px;margin-top:-32px}
+.prof-top{display:flex;justify-content:space-between;align-items:flex-end}
+.avatar{width:64px;height:64px;border-radius:50%;background:#fff;padding:4px;box-shadow:0 2px 4px rgba(0,0,0,.1),0 4px 6px rgba(0,0,0,.1)}
+.avatar div{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,#0051d5,#c4f269);display:grid;place-items:center;font-family:var(--pj);font-weight:700;font-size:16px;color:var(--navy)}
+.pill{display:inline-flex;align-items:center;gap:4px;background:var(--light);border:1px solid #dbe1ff;border-radius:999px;padding:4px 10px;font-family:var(--mn);font-weight:600;font-size:12px;line-height:16px;color:var(--blue)}
+.prof h3{font-family:var(--pj);font-weight:600;font-size:20px;line-height:28px;display:flex;align-items:baseline;gap:6px;padding-top:12px}
+.prof h3 small{font-family:var(--in);font-weight:700;font-size:14px;color:var(--blue)}
+.role{font-size:14px;line-height:20px;font-weight:500;color:var(--muted)}
+.bio{font-size:12px;line-height:19.5px;color:rgba(22,28,38,.8);padding:6px 0 12px}
+.stats{display:flex;gap:16px;align-items:center;border-top:1px solid rgba(198,198,205,.3);padding-top:8px;font-size:12px;line-height:16px;color:var(--muted)}
+.stats b{color:var(--ink)}
+.mock-post{position:absolute;left:-24px;top:316px;width:411px;max-width:calc(100% + 24px);background:rgba(255,255,255,.95);backdrop-filter:blur(24px);border:1px solid rgba(198,198,205,.4);border-radius:12px;padding:16px;box-shadow:0 8px 10px rgba(0,0,0,.1),0 20px 25px rgba(0,0,0,.1)}
+.post-h{display:flex;gap:8px;align-items:center}
+.post-av{width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--lime);display:grid;place-items:center;font-weight:700;font-size:10px}
+.post-h b{display:block;font-size:11px;line-height:13.8px}
+.post-h span{display:block;font-size:9px;line-height:11.3px;color:var(--muted)}
+.quote{font-style:italic;font-weight:500;font-size:14px;line-height:20px;padding:10px 0 4px}
+.post-f{display:flex;justify-content:space-between;border-top:1px solid rgba(198,198,205,.2);padding-top:8px;margin-top:8px;font-size:12px;line-height:16px;color:var(--muted)}
+.post-f .like{display:flex;gap:4px;align-items:center;color:var(--blue);font-weight:600}
+.mock-an{position:absolute;left:99px;top:480px;width:373px;max-width:calc(100% - 99px + 24px);background:var(--navy);border:1px solid rgba(198,198,205,.2);border-radius:12px;padding:16px;box-shadow:0 25px 50px rgba(0,0,0,.25)}
+.an-h{display:flex;justify-content:space-between;align-items:center;color:var(--lime);font-family:var(--mn);font-weight:700;font-size:12px;letter-spacing:.6px;text-transform:uppercase}
+.an-g{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.an-c{background:rgba(20,27,44,.8);border:1px solid rgba(118,119,125,.2);border-radius:8px;padding:8px;text-align:center}
+.an-c b{display:block;color:var(--lime);font-size:12px;line-height:16px}
+.an-c span{display:block;color:var(--slate);font-size:10px;line-height:15px}
+.mock-badge{position:absolute;left:183px;top:-16px;display:flex;align-items:center;gap:6px;background:var(--lime);color:var(--limeink);border-radius:999px;padding:6px 14px;font-family:var(--mn);font-weight:700;font-size:12px;line-height:16px;box-shadow:0 4px 6px rgba(0,0,0,.1),0 10px 15px rgba(0,0,0,.1);white-space:nowrap}
+
+/* METRICS */
+.metrics{position:relative;overflow:hidden;background:var(--navy);padding:96px 0}
+.metrics .g1{left:-128px;top:-128px;width:384px;height:384px;background:rgba(0,81,213,.2);filter:blur(120px)}
+.metrics .g2{right:-128px;bottom:-60px;width:384px;height:384px;background:rgba(49,107,243,.2);filter:blur(120px)}
+.metrics .container{position:relative;display:flex;flex-direction:column;align-items:center;gap:56px}
+.center{text-align:center;max-width:768px}
+.center .eyebrow{padding-top:6px}
+.center h2{margin-top:12px;color:#fff}
+.center p{margin-top:12px;color:var(--slate);padding-top:4px}
+.m-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;width:100%;padding-top:8px}
+.m-card{background:rgba(240,243,255,.05);border:1px solid rgba(118,119,125,.2);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:4px}
+.m-card .num{font-family:var(--pj);font-weight:700;font-size:48px;line-height:56px;color:var(--lime)}
+.m-card h4{font-family:var(--mn);font-weight:600;font-size:16px;line-height:22px;color:#fff;padding-top:4px}
+.m-card p{font-size:14px;line-height:20px;color:var(--slate)}
+.niches{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;border-top:1px solid rgba(118,119,125,.2);padding-top:24px;width:100%}
+.niches .lbl{font-family:var(--mn);font-weight:500;font-size:12px;line-height:16px;letter-spacing:.6px;text-transform:uppercase;color:var(--slate);padding-right:8px}
+.niche{background:rgba(255,255,255,.1);border:1px solid rgba(118,119,125,.2);border-radius:999px;padding:6px 16px;font-family:var(--mn);font-weight:600;font-size:12px;line-height:16px;color:#fff}
+
+/* SERVICES */
+.services{padding:96px 0;background:var(--bg)}
+.services .container{display:flex;flex-direction:column;gap:64px}
+.s-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.s-head .eyebrow{color:var(--blue);padding-top:6px}
+.s-head h2{margin-top:8px}
+.s-head p{max-width:448px;font-size:16px;line-height:24px;color:var(--muted)}
+.s-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.s-card{background:#fff;border:1px solid rgba(198,198,205,.5);border-radius:16px;padding:32px;box-shadow:0 1px 2px rgba(0,0,0,.05);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.s-ico{width:56px;height:56px;border-radius:12px;background:var(--light);display:grid;place-items:center;color:var(--blue);margin-bottom:30px}
+.pillar{font-family:var(--mn);font-weight:700;font-size:12px;line-height:16px;letter-spacing:.6px;color:var(--blue)}
+.s-card h3{font-family:var(--pj);font-weight:600;font-size:24px;line-height:32px;margin-top:6px}
+.s-card p{font-size:16px;line-height:26px;color:var(--muted);margin-top:12px}
+.s-card ul{list-style:none;display:flex;flex-direction:column;gap:9.5px;margin-top:24px}
+.s-card li{display:flex;gap:8px;align-items:center;font-size:14px;line-height:20px;color:var(--muted)}
+.s-card li .ic{color:var(--blue)}
+.s-link{border-top:1px solid rgba(198,198,205,.3);padding-top:32px;font-weight:600;font-size:12px;line-height:16px;color:var(--blue);display:block}
+
+/* FORM */
+.contact{background:var(--light);border-top:1px solid rgba(198,198,205,.3);padding:96px 0}
+.c-grid{display:grid;grid-template-columns:439fr 633fr;gap:48px;align-items:start}
+.c-left{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.c-left h2{color:var(--ink)}
+.c-left .lead{color:var(--muted)}
+.vp{display:flex;flex-direction:column;gap:16px;padding-top:16px;width:100%}
+.vp-item{display:flex;gap:16px;background:#fff;border:1px solid rgba(198,198,205,.3);border-radius:12px;padding:16px}
+.vp-ico{width:40px;height:40px;border-radius:8px;background:var(--chip);display:grid;place-items:center;color:var(--blue);flex:none}
+.vp-item h4{font-family:var(--pj);font-weight:600;font-size:20px;line-height:28px}
+.vp-item p{font-size:14px;line-height:20px;color:var(--muted)}
+.card-form{position:relative;background:#fff;border:1px solid rgba(198,198,205,.5);border-radius:16px;padding:40px;box-shadow:0 8px 10px rgba(0,0,0,.1),0 20px 25px rgba(0,0,0,.1)}
+form{display:flex;flex-direction:column;gap:24px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field label{font-family:var(--mn);font-weight:600;font-size:14px;line-height:18px}
+.field input{width:100%;font-family:var(--in);font-size:16px;line-height:19px;color:var(--ink);background:var(--bg);border:1px solid rgba(198,198,205,.6);border-radius:12px;padding:14px 16px;outline:none;transition:border-color .15s,box-shadow .15s}
+.field input::placeholder{color:#6b7280}
+.field input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(0,81,213,.15)}
+.field input.err{border-color:#ba1a1a}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.submit{width:100%;background:var(--navy);color:#fff;border-radius:12px;padding:16px;font-family:var(--mn);font-weight:700;font-size:16px;line-height:22px;box-shadow:0 2px 4px rgba(0,0,0,.1),0 4px 6px rgba(0,0,0,.1);transition:filter .15s,transform .15s}
+.submit:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.privacy{display:flex;gap:6px;justify-content:center;align-items:center;font-size:12px;line-height:16px;color:var(--muted)}
+.privacy .ic{color:var(--blue)}
+.status{display:none;border-radius:12px;padding:14px 16px;font-family:var(--mn);font-weight:600;font-size:14px;line-height:20px}
+.status.ok{display:block;background:#eaf9cf;color:#243300;border:1px solid var(--lime)}
+.status.bad{display:block;background:#fde8e8;color:#8a1212;border:1px solid #f4b5b5}
+
+/* OFFER */
+.offer{position:relative;overflow:hidden;background:var(--dark);padding:96px 0}
+.offer .g1{left:50%;top:295px;width:800px;height:500px;margin-left:-400px;background:rgba(0,81,213,.25);filter:blur(160px)}
+.offer .container{position:relative;display:flex;flex-direction:column;align-items:center;gap:56px}
+.o-card{width:100%;max-width:896px;background:rgba(20,27,44,.9);border:1px solid rgba(0,81,213,.4);border-radius:24px;padding:48px;box-shadow:0 25px 50px rgba(0,0,0,.25),0 0 60px rgba(0,81,213,.25);backdrop-filter:blur(48px)}
+.o-grid{display:grid;grid-template-columns:452fr 314fr;gap:32px;align-items:start}
+.o-left{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.o-tag{background:var(--lime);color:var(--limeink);border-radius:999px;padding:4px 12px;font-family:var(--mn);font-weight:800;font-size:12px;line-height:16px;letter-spacing:.6px}
+.o-left h3{font-family:var(--pj);font-weight:700;font-size:clamp(28px,3.4vw,36px);line-height:1.222;color:#fff}
+.price{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-top:8px}
+.price .big{font-family:var(--pj);font-weight:800;font-size:48px;line-height:48px;color:var(--lime)}
+.price .was{font-size:20px;line-height:28px;color:var(--slate);text-decoration:line-through}
+.price .off{background:var(--blue);color:#fff;border-radius:4px;padding:2px 8px;font-weight:700;font-size:12px;line-height:16px;margin-bottom:2px}
+.check{list-style:none;display:flex;flex-direction:column;gap:12px;padding-top:8px}
+.check li{display:flex;gap:12px;align-items:center;font-size:14px;line-height:20px;color:#d4dae9}
+.check .tk{width:20px;height:20px;border-radius:50%;background:var(--lime);color:var(--limeink);display:grid;place-items:center;flex:none}
+.check b{font-weight:700}
+.report{background:rgba(240,243,255,.1);border:1px solid rgba(118,119,125,.3);border-radius:16px;padding:24px;backdrop-filter:blur(24px);box-shadow:0 8px 10px rgba(0,0,0,.1),0 20px 25px rgba(0,0,0,.1);margin-top:53px}
+.rep-h{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(118,119,125,.2);padding-bottom:16px}
+.dots{display:flex;gap:8px}
+.dots i{width:12px;height:12px;border-radius:50%}
+.rep-h span{font-family:'Liberation Mono',ui-monospace,Menlo,Consolas,monospace;font-size:12px;line-height:16px;color:var(--lime)}
+.gauges{display:flex;flex-direction:column;gap:16px;padding:20px 0}
+.g-row .t{display:flex;justify-content:space-between;font-weight:600;font-size:12px;line-height:16px;color:#fff;gap:8px}
+.bar{height:8px;border-radius:999px;background:rgba(227,232,247,.2);margin-top:4px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:999px}
+.insight{background:rgba(240,243,255,.05);border:1px solid rgba(118,119,125,.2);border-radius:12px;padding:12px;font-size:12px;line-height:16px;color:var(--slate)}
+.insight b{color:var(--lime)}
+
+/* TESTIMONIALS */
+.testi{background:var(--bg);padding:96px 0}
+.testi .container{display:flex;flex-direction:column;gap:48px}
+.t-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.t-head .eyebrow{color:var(--blue);padding-top:6px}
+.t-head h2{margin-top:8px}
+.nav-btns{display:flex;gap:12px}
+.nav-btns button{width:48px;height:48px;border-radius:50%;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:background .15s}
+.nav-btns button:hover{background:var(--light)}
+.t-track{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{background:#fff;border:1px solid rgba(198,198,205,.5);border-radius:16px;padding:32px;box-shadow:0 1px 2px rgba(0,0,0,.05);display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.stars{display:flex;gap:4px;color:var(--blue)}
+.t-card blockquote{font-style:italic;font-size:16px;line-height:26px;margin-top:16px}
+.t-foot{display:flex;gap:12px;align-items:center;border-top:1px solid rgba(198,198,205,.3);padding-top:24px}
+.t-av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--mn);font-weight:700;font-size:16px;flex:none}
+.t-name{display:flex;gap:4px;align-items:center;font-family:var(--mn);font-weight:700;font-size:14px;line-height:18px}
+.t-name .ic{color:var(--blue)}
+.t-role{font-size:12px;line-height:16px;color:var(--muted)}
+.t-link{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;font-size:16px;line-height:24px;color:var(--muted)}
+.t-link a{font-weight:700;color:var(--blue)}
+
+/* FAQ */
+.faq{background:rgba(240,243,255,.6);border-top:1px solid rgba(198,198,205,.3);padding:96px 0}
+.faq-grid{display:grid;grid-template-columns:439fr 633fr;gap:48px;align-items:start}
+.faq-left{padding-top:6px;position:sticky;top:96px}
+.faq-left .eyebrow{color:var(--blue)}
+.faq-left h2{margin-top:8px}
+.faq-left .lead{color:var(--muted);padding:8px 0 16px}
+.help{background:#fff;border:1px solid rgba(198,198,205,.4);border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(0,0,0,.05);display:flex;flex-direction:column;gap:4px;margin-top:8px}
+.help h4{font-family:var(--pj);font-weight:600;font-size:20px;line-height:28px}
+.help p{font-size:14px;line-height:20px;color:var(--muted)}
+.help a{font-family:var(--mn);font-weight:700;font-size:12px;line-height:16px;color:var(--blue);padding-top:8px}
+.acc{display:flex;flex-direction:column;gap:12px}
+.acc-item{background:#fff;border:1px solid rgba(198,198,205,.4);border-radius:12px;overflow:hidden}
+.acc-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;text-align:left;font-family:var(--mn);font-weight:600;font-size:16px;line-height:24px;color:var(--ink)}
+.acc-q .ic{color:var(--blue);transition:transform .2s}
+.acc-item.open .acc-q .ic{transform:rotate(180deg)}
+.acc-a{display:none;padding:0 24px 20px;font-size:16px;line-height:24px;color:var(--muted)}
+.acc-item.open .acc-a{display:block}
+
+/* FOOTER */
+.footer{background:var(--navy);border-top:1px solid rgba(118,119,125,.2);padding-top:64px}
+.f-cta{background:rgba(240,243,255,.1);border:1px solid rgba(118,119,125,.2);border-radius:24px;padding:56px clamp(24px,14vw,175px);backdrop-filter:blur(24px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px}
+.f-cta .eyebrow{color:var(--lime);padding-top:6px}
+.f-cta h2{color:#fff}
+.f-cta p{color:var(--slate);max-width:576px}
+.f-cta .btn{margin-top:8px}
+.f-main{padding:40px 0;margin-top:48px}
+.f-cols{display:grid;grid-template-columns:443fr 250fr 347fr;gap:40px;align-items:start}
+.f-brand{display:flex;flex-direction:column;gap:16px}
+.f-logo{display:flex;align-items:center;gap:8px}
+.f-logo .m{width:32px;height:32px;border-radius:8px;background:var(--lime);color:var(--limeink);display:grid;place-items:center}
+.f-logo span{font-family:var(--pj);font-weight:700;font-size:24px;line-height:32px;letter-spacing:-.6px;color:#fff}
+.f-brand p{font-size:16px;line-height:24px;color:var(--slate);max-width:384px}
+.social{display:flex;gap:12px;padding-top:8px}
+.social a{width:36px;height:36px;border-radius:8px;background:rgba(240,243,255,.1);display:grid;place-items:center;color:#fff;font-family:'Liberation Mono',ui-monospace,Menlo,monospace;font-weight:700;font-size:12px}
+.f-col h5{font-family:var(--mn);font-weight:700;font-size:14px;line-height:18px;letter-spacing:.7px;text-transform:uppercase;color:#fff;margin-bottom:12px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.f-col li a{font-size:14px;line-height:20px;color:var(--slate)}
+.f-col li a:hover{color:#fff}
+.f-col p{font-size:14px;line-height:20px;color:var(--slate)}
+.f-col .mail{display:block;font-weight:600;font-size:16px;line-height:24px;color:var(--lime);margin:12px 0}
+.f-col small{font-size:12px;line-height:16px;color:var(--slate)}
+.copy{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid rgba(118,119,125,.2);margin-top:40px;padding:32px 0 40px;font-family:var(--mn);font-weight:700;font-size:12px;line-height:16px;color:var(--slate)}
+.copy div{display:flex;gap:24px}
+
+/* RESPONSIVE */
+@media (max-width:1024px){
+  :root{--pad:32px}
+  .nav{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:56px}
+  .hero{padding:64px 0}
+  .m-grid{grid-template-columns:repeat(2,1fr)}
+  .s-head{flex-direction:column;align-items:flex-start}
+  .s-grid{grid-template-columns:1fr}
+  .c-grid,.faq-grid{grid-template-columns:1fr}
+  .faq-left{position:static}
+  .o-grid{grid-template-columns:1fr}
+  .report{margin-top:0}
+  .t-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+  .t-card{flex:0 0 min(86%,360px);scroll-snap-align:start}
+  .f-cols{grid-template-columns:1fr 1fr}
+  .f-brand{grid-column:1/-1}
+  .mock{margin-top:16px}
+}
+@media (max-width:640px){
+  :root{--pad:20px}
+  .metrics,.services,.contact,.offer,.testi,.faq{padding:64px 0}
+  .brand-name{font-size:20px}
+  .brand-mark{width:32px;height:32px}
+  .head-cta{padding:8px 12px;font-size:12px}
+  .m-grid{grid-template-columns:1fr}
+  .row2{grid-template-columns:1fr}
+  .card-form{padding:24px}
+  .o-card{padding:28px 20px}
+  .t-head{flex-direction:column;align-items:flex-start}
+  .f-cols{grid-template-columns:1fr}
+  .f-cta{padding:40px 20px}
+  .copy{flex-direction:column;align-items:flex-start}
+  .btn{width:100%}
+  .cta-row .btn{width:100%}
+  /* mockup stacks on small screens */
+  .mock{height:auto;display:flex;flex-direction:column;gap:16px;padding-top:20px}
+  .mock-main,.mock-post,.mock-an,.mock-badge{position:relative;left:auto;top:auto;width:100%;max-width:100%}
+  .mock-main{height:auto}
+  .mock-badge{position:absolute;top:0;right:0;left:auto;width:auto}
+  .vp-item{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- Icon sprite (paths exported from Figma) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-trend" viewBox="0 0 20 12"><path d="M1.4 12L0 10.6L7.4 3.15L11.4 7.15L16.6 2H14V0H20V6H18V3.4L11.4 10L7.4 6L1.4 12Z"/></symbol>
+  <symbol id="i-trend-sm" viewBox="0 0 15 9"><path d="M1.05 9L0 7.95L5.55 2.3625L8.55 5.3625L12.45 1.5H10.5V0H15V4.5H13.5V2.55L8.55 7.5L5.55 4.5L1.05 9Z"/></symbol>
+  <symbol id="i-trend-big" viewBox="0 0 30 18"><path d="M2.1 18L0 15.9L11.1 4.725L17.1 10.725L24.9 3H21V0H30V9H27V5.1L17.1 15L11.1 9L2.1 18Z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.5 14.5L12.5 12.5L14.5 5.5L7.5 7.5L5.5 14.5ZM10 11.5C9.58333 11.5 9.22917 11.3542 8.9375 11.0625C8.64583 10.7708 8.5 10.4167 8.5 10C8.5 9.58333 8.64583 9.22917 8.9375 8.9375C9.22917 8.64583 9.58333 8.5 10 8.5C10.4167 8.5 10.7708 8.64583 11.0625 8.9375C11.3542 9.22917 11.5 9.58333 11.5 10C11.5 10.4167 11.3542 10.7708 11.0625 11.0625C10.7708 11.3542 10.4167 11.5 10 11.5ZM10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2167 18 14.1042 17.2208 15.6625 15.6625C17.2208 14.1042 18 12.2167 18 10C18 7.78333 17.2208 5.89583 15.6625 4.3375C14.1042 2.77917 12.2167 2 10 2C7.78333 2 5.89583 2.77917 4.3375 4.3375C2.77917 5.89583 2 7.78333 2 10C2 12.2167 2.77917 14.1042 4.3375 15.6625C5.89583 17.2208 7.78333 18 10 18Z"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 12 12"><path d="M5.01667 8.51667L9.12917 4.40417L8.3125 3.5875L5.01667 6.88333L3.35417 5.22083L2.5375 6.0375L5.01667 8.51667ZM5.83333 11.6667C5.02639 11.6667 4.26806 11.5135 3.55833 11.2073C2.84861 10.901 2.23125 10.4854 1.70625 9.96042C1.18125 9.43542 0.765625 8.81806 0.459375 8.10833C0.153125 7.39861 0 6.64028 0 5.83333C0 5.02639 0.153125 4.26806 0.459375 3.55833C0.765625 2.84861 1.18125 2.23125 1.70625 1.70625C2.23125 1.18125 2.84861 0.765625 3.55833 0.459375C4.26806 0.153125 5.02639 0 5.83333 0C6.64028 0 7.39861 0.153125 8.10833 0.459375C8.81806 0.765625 9.43542 1.18125 9.96042 1.70625C10.4854 2.23125 10.901 2.84861 11.2073 3.55833C11.5135 4.26806 11.6667 5.02639 11.6667 5.83333C11.6667 6.64028 11.5135 7.39861 11.2073 8.10833C10.901 8.81806 10.4854 9.43542 9.96042 9.96042C9.43542 10.4854 8.81806 10.901 8.10833 11.2073C7.39861 11.5135 6.64028 11.6667 5.83333 11.6667ZM5.83333 10.5C7.13611 10.5 8.23958 10.0479 9.14375 9.14375C10.0479 8.23958 10.5 7.13611 10.5 5.83333C10.5 4.53056 10.0479 3.42708 9.14375 2.52292C8.23958 1.61875 7.13611 1.16667 5.83333 1.16667C4.53056 1.16667 3.42708 1.61875 2.52292 2.52292C1.61875 3.42708 1.16667 4.53056 1.16667 5.83333C1.16667 7.13611 1.61875 8.23958 2.52292 9.14375C3.42708 10.0479 4.53056 10.5 5.83333 10.5Z"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 18 16"><path d="M0 10V8H7V10H0ZM0 6V4H11V6H0ZM0 2V0H11V2H0ZM9 16V12.925L14.525 7.425C14.675 7.275 14.8417 7.16667 15.025 7.1C15.2083 7.03333 15.3917 7 15.575 7C15.775 7 15.9667 7.0375 16.15 7.1125C16.3333 7.1875 16.5 7.3 16.65 7.45L17.575 8.375C17.7083 8.525 17.8125 8.69167 17.8875 8.875C17.9625 9.05833 18 9.24167 18 9.425C18 9.60833 17.9667 9.79583 17.9 9.9875C17.8333 10.1792 17.725 10.35 17.575 10.5L12.075 16H9ZM16.5 9.425L15.575 8.5L16.5 9.425ZM10.5 14.5H11.45L14.475 11.45L14.025 10.975L13.55 10.525L10.5 13.55V14.5ZM14.025 10.975L13.55 10.525L14.475 11.45L14.025 10.975Z"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 20 20"><path d="M9 19.9C7.73333 19.7667 6.55417 19.4208 5.4625 18.8625C4.37083 18.3042 3.42083 17.5792 2.6125 16.6875C1.80417 15.7958 1.16667 14.775 0.7 13.625C0.233333 12.475 0 11.25 0 9.95C0 8.43333 0.304167 7.03333 0.9125 5.75C1.52083 4.46667 2.35 3.36667 3.4 2.45H1V0.45H7V6.45H5V3.725C4.08333 4.45833 3.35417 5.3625 2.8125 6.4375C2.27083 7.5125 2 8.68333 2 9.95C2 12 2.67083 13.7708 4.0125 15.2625C5.35417 16.7542 7.01667 17.625 9 17.875V19.9ZM8.575 14.55L4.35 10.3L5.75 8.9L8.575 11.725L14.25 6.05L15.65 7.475L8.575 14.55ZM13 19.45V13.45H15V16.175C15.9167 15.425 16.6458 14.5167 17.1875 13.45C17.7292 12.3833 18 11.2167 18 9.95C18 7.9 17.3292 6.12917 15.9875 4.6375C14.6458 3.14583 12.9833 2.275 11 2.025V0C13.5333 0.25 15.6667 1.31667 17.4 3.2C19.1333 5.08333 20 7.33333 20 9.95C20 11.4667 19.6958 12.8667 19.0875 14.15C18.4792 15.4333 17.65 16.5333 16.6 17.45H19V19.45H13Z"/></symbol>
+  <symbol id="i-verified" viewBox="0 0 13 13"><path d="M4.43333 12.25L3.325 10.3833L1.225 9.91667L1.42917 7.75833L0 6.125L1.42917 4.49167L1.225 2.33333L3.325 1.86667L4.43333 0L6.41667 0.845833L8.4 0L9.50833 1.86667L11.6083 2.33333L11.4042 4.49167L12.8333 6.125L11.4042 7.75833L11.6083 9.91667L9.50833 10.3833L8.4 12.25L6.41667 11.4042L4.43333 12.25ZM4.92917 10.7625L6.41667 10.1208L7.93333 10.7625L8.75 9.3625L10.3542 8.98333L10.2083 7.35L11.2875 6.125L10.2083 4.87083L10.3542 3.2375L8.75 2.8875L7.90417 1.4875L6.41667 2.12917L4.9 1.4875L4.08333 2.8875L2.47917 3.2375L2.625 4.87083L1.54583 6.125L2.625 7.35L2.47917 9.0125L4.08333 9.3625L4.92917 10.7625ZM5.80417 8.19583L9.1 4.9L8.28333 4.05417L5.80417 6.53333L4.55 5.30833L3.73333 6.125L5.80417 8.19583Z"/></symbol>
+  <symbol id="i-like" viewBox="0 0 13 12"><path d="M9.33333 11.6667H2.91667V4.08333L7 0L7.72917 0.729167C7.79722 0.797222 7.85313 0.889583 7.89687 1.00625C7.94062 1.12292 7.9625 1.23472 7.9625 1.34167V1.54583L7.32083 4.08333H11.0833C11.3944 4.08333 11.6667 4.2 11.9 4.43333C12.1333 4.66667 12.25 4.93889 12.25 5.25V6.41667C12.25 6.48472 12.2403 6.55764 12.2208 6.63542C12.2014 6.71319 12.1819 6.78611 12.1625 6.85417L10.4125 10.9667C10.325 11.1611 10.1792 11.3264 9.975 11.4625C9.77083 11.5986 9.55694 11.6667 9.33333 11.6667ZM4.08333 10.5H9.33333L11.0833 6.41667V5.25H5.83333L6.62083 2.04167L4.08333 4.57917V10.5ZM2.91667 4.08333V5.25H1.16667V10.5H2.91667V11.6667H0V4.08333H2.91667Z"/></symbol>
+  <symbol id="i-insights" viewBox="0 0 13 10"><path d="M1.16667 9.91667C0.845833 9.91667 0.571181 9.80243 0.342708 9.57396C0.114236 9.34549 0 9.07083 0 8.75C0 8.42917 0.114236 8.15451 0.342708 7.92604C0.571181 7.69757 0.845833 7.58333 1.16667 7.58333C1.225 7.58333 1.27604 7.58333 1.31979 7.58333C1.36354 7.58333 1.40972 7.59306 1.45833 7.6125L4.1125 4.95833C4.09306 4.90972 4.08333 4.86354 4.08333 4.81979C4.08333 4.77604 4.08333 4.725 4.08333 4.66667C4.08333 4.34583 4.19757 4.07118 4.42604 3.84271C4.65451 3.61424 4.92917 3.5 5.25 3.5C5.57083 3.5 5.84549 3.61424 6.07396 3.84271C6.30243 4.07118 6.41667 4.34583 6.41667 4.66667C6.41667 4.68611 6.40694 4.78333 6.3875 4.95833L7.875 6.44583C7.92361 6.42639 7.96979 6.41667 8.01354 6.41667C8.05729 6.41667 8.10833 6.41667 8.16667 6.41667C8.225 6.41667 8.27604 6.41667 8.31979 6.41667C8.36354 6.41667 8.40972 6.42639 8.45833 6.44583L10.5292 4.375C10.5097 4.32639 10.5 4.28021 10.5 4.23646C10.5 4.19271 10.5 4.14167 10.5 4.08333C10.5 3.7625 10.6142 3.48785 10.8427 3.25938C11.0712 3.0309 11.3458 2.91667 11.6667 2.91667C11.9875 2.91667 12.2622 3.0309 12.4906 3.25938C12.7191 3.48785 12.8333 3.7625 12.8333 4.08333C12.8333 4.40417 12.7191 4.67882 12.4906 4.90729C12.2622 5.13576 11.9875 5.25 11.6667 5.25C11.6083 5.25 11.5573 5.25 11.5135 5.25C11.4698 5.25 11.4236 5.24028 11.375 5.22083L9.30417 7.29167C9.32361 7.34028 9.33333 7.38646 9.33333 7.43021C9.33333 7.47396 9.33333 7.525 9.33333 7.58333C9.33333 7.90417 9.2191 8.17882 8.99063 8.40729C8.76215 8.63576 8.4875 8.75 8.16667 8.75C7.84583 8.75 7.57118 8.63576 7.34271 8.40729C7.11424 8.17882 7 7.90417 7 7.58333C7 7.525 7 7.47396 7 7.43021C7 7.38646 7.00972 7.34028 7.02917 7.29167L5.54167 5.80417C5.49306 5.82361 5.44687 5.83333 5.40312 5.83333C5.35938 5.83333 5.30833 5.83333 5.25 5.83333C5.23056 5.83333 5.13333 5.82361 4.95833 5.80417L2.30417 8.45833C2.32361 8.50694 2.33333 8.55313 2.33333 8.59688C2.33333 8.64062 2.33333 8.69167 2.33333 8.75C2.33333 9.07083 2.2191 9.34549 1.99063 9.57396C1.76215 9.80243 1.4875 9.91667 1.16667 9.91667ZM1.75 4.06875L1.38542 3.28125L0.597917 2.91667L1.38542 2.55208L1.75 1.76458L2.11458 2.55208L2.90208 2.91667L2.11458 3.28125L1.75 4.06875ZM8.16667 3.5L7.6125 2.30417L6.41667 1.75L7.6125 1.19583L8.16667 0L8.72083 1.19583L9.91667 1.75L8.72083 2.30417L8.16667 3.5Z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 20C8.61667 20 7.31667 19.7375 6.1 19.2125C4.88333 18.6875 3.825 17.975 2.925 17.075C2.025 16.175 1.3125 15.1167 0.7875 13.9C0.2625 12.6833 0 11.3833 0 10C0 8.61667 0.2625 7.31667 0.7875 6.1C1.3125 4.88333 2.025 3.825 2.925 2.925C3.825 2.025 4.88333 1.3125 6.1 0.7875C7.31667 0.2625 8.61667 0 10 0C11.3833 0 12.6833 0.2625 13.9 0.7875C15.1167 1.3125 16.175 2.025 17.075 2.925C17.975 3.825 18.6875 4.88333 19.2125 6.1C19.7375 7.31667 20 8.61667 20 10C20 11.3833 19.7375 12.6833 19.2125 13.9C18.6875 15.1167 17.975 16.175 17.075 17.075C16.175 17.975 15.1167 18.6875 13.9 19.2125C12.6833 19.7375 11.3833 20 10 20ZM10 18C12.2333 18 14.125 17.225 15.675 15.675C17.225 14.125 18 12.2333 18 10C18 7.76667 17.225 5.875 15.675 4.325C14.125 2.775 12.2333 2 10 2C7.76667 2 5.875 2.775 4.325 4.325C2.775 5.875 2 7.76667 2 10C2 12.2333 2.775 14.125 4.325 15.675C5.875 17.225 7.76667 18 10 18ZM10 16C8.33333 16 6.91667 15.4167 5.75 14.25C4.58333 13.0833 4 11.6667 4 10C4 8.33333 4.58333 6.91667 5.75 5.75C6.91667 4.58333 8.33333 4 10 4C11.6667 4 13.0833 4.58333 14.25 5.75C15.4167 6.91667 16 8.33333 16 10C16 11.6667 15.4167 13.0833 14.25 14.25C13.0833 15.4167 11.6667 16 10 16ZM10 14C11.1 14 12.0417 13.6083 12.825 12.825C13.6083 12.0417 14 11.1 14 10C14 8.9 13.6083 7.95833 12.825 7.175C12.0417 6.39167 11.1 6 10 6C8.9 6 7.95833 6.39167 7.175 7.175C6.39167 7.95833 6 8.9 6 10C6 11.1 6.39167 12.0417 7.175 12.825C7.95833 13.6083 8.9 14 10 14ZM10 12C9.45 12 8.97917 11.8042 8.5875 11.4125C8.19583 11.0208 8 10.55 8 10C8 9.45 8.19583 8.97917 8.5875 8.5875C8.97917 8.19583 9.45 8 10 8C10.55 8 11.0208 8.19583 11.4125 8.5875C11.8042 8.97917 12 9.45 12 10C12 10.55 11.8042 11.0208 11.4125 11.4125C11.0208 11.8042 10.55 12 10 12Z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 22 19"><path d="M18.95 13.9L17.4 12.35C18.1333 11.6667 18.7083 10.8583 19.125 9.925C19.5417 8.99167 19.75 8 19.75 6.95C19.75 5.9 19.5417 4.91667 19.125 4C18.7083 3.08333 18.1333 2.28333 17.4 1.6L18.95 0C19.8833 0.883333 20.625 1.925 21.175 3.125C21.725 4.325 22 5.6 22 6.95C22 8.3 21.725 9.575 21.175 10.775C20.625 11.975 19.8833 13.0167 18.95 13.9ZM15.75 10.7L14.15 9.1C14.45 8.81667 14.6917 8.49583 14.875 8.1375C15.0583 7.77917 15.15 7.38333 15.15 6.95C15.15 6.51667 15.0583 6.12083 14.875 5.7625C14.6917 5.40417 14.45 5.08333 14.15 4.8L15.75 3.2C16.2833 3.68333 16.7 4.24583 17 4.8875C17.3 5.52917 17.45 6.21667 17.45 6.95C17.45 7.68333 17.3 8.37083 17 9.0125C16.7 9.65417 16.2833 10.2167 15.75 10.7ZM8 10.95C6.9 10.95 5.95833 10.5583 5.175 9.775C4.39167 8.99167 4 8.05 4 6.95C4 5.85 4.39167 4.90833 5.175 4.125C5.95833 3.34167 6.9 2.95 8 2.95C9.1 2.95 10.0417 3.34167 10.825 4.125C11.6083 4.90833 12 5.85 12 6.95C12 8.05 11.6083 8.99167 10.825 9.775C10.0417 10.5583 9.1 10.95 8 10.95ZM0 18.95V16.15C0 15.6 0.141667 15.0833 0.425 14.6C0.708333 14.1167 1.1 13.75 1.6 13.5C2.45 13.0667 3.40833 12.7 4.475 12.4C5.54167 12.1 6.71667 11.95 8 11.95C9.28333 11.95 10.4583 12.1 11.525 12.4C12.5917 12.7 13.55 13.0667 14.4 13.5C14.9 13.75 15.2917 14.1167 15.575 14.6C15.8583 15.0833 16 15.6 16 16.15V18.95H0ZM2 16.95H14V16.15C14 15.9667 13.9542 15.8 13.8625 15.65C13.7708 15.5 13.65 15.3833 13.5 15.3C12.9 15 12.1292 14.7 11.1875 14.4C10.2458 14.1 9.18333 13.95 8 13.95C6.81667 13.95 5.75417 14.1 4.8125 14.4C3.87083 14.7 3.1 15 2.5 15.3C2.35 15.3833 2.22917 15.5 2.1375 15.65C2.04583 15.8 2 15.9667 2 16.15V16.95ZM8 8.95C8.55 8.95 9.02083 8.75417 9.4125 8.3625C9.80417 7.97083 10 7.5 10 6.95C10 6.4 9.80417 5.92917 9.4125 5.5375C9.02083 5.14583 8.55 4.95 8 4.95C7.45 4.95 6.97917 5.14583 6.5875 5.5375C6.19583 5.92917 6 6.4 6 6.95C6 7.5 6.19583 7.97083 6.5875 8.3625C6.97917 8.75417 7.45 8.95 8 8.95Z"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 16 20"><path d="M6.55 16.2L11.725 10H7.725L8.45 4.325L3.825 11H7.3L6.55 16.2ZM4 20L5 13H0L9 0H11L10 8H16L6 20H4Z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 10 13"><path d="M1.16667 12.25C0.845833 12.25 0.571181 12.1358 0.342708 11.9073C0.114236 11.6788 0 11.4042 0 11.0833V5.25C0 4.92917 0.114236 4.65451 0.342708 4.42604C0.571181 4.19757 0.845833 4.08333 1.16667 4.08333H1.75V2.91667C1.75 2.10972 2.03438 1.42188 2.60313 0.853125C3.17188 0.284375 3.85972 0 4.66667 0C5.47361 0 6.16146 0.284375 6.73021 0.853125C7.29896 1.42188 7.58333 2.10972 7.58333 2.91667V4.08333H8.16667C8.4875 4.08333 8.76215 4.19757 8.99063 4.42604C9.2191 4.65451 9.33333 4.92917 9.33333 5.25V11.0833C9.33333 11.4042 9.2191 11.6788 8.99063 11.9073C8.76215 12.1358 8.4875 12.25 8.16667 12.25H1.16667ZM1.16667 11.0833H8.16667V5.25H1.16667V11.0833ZM4.66667 9.33333C4.9875 9.33333 5.26215 9.2191 5.49062 8.99063C5.7191 8.76215 5.83333 8.4875 5.83333 8.16667C5.83333 7.84583 5.7191 7.57118 5.49062 7.34271C5.26215 7.11424 4.9875 7 4.66667 7C4.34583 7 4.07118 7.11424 3.84271 7.34271C3.61424 7.57118 3.5 7.84583 3.5 8.16667C3.5 8.4875 3.61424 8.76215 3.84271 8.99063C4.07118 9.2191 4.34583 9.33333 4.66667 9.33333ZM2.91667 4.08333H6.41667V2.91667C6.41667 2.43056 6.24653 2.01736 5.90625 1.67708C5.56597 1.33681 5.15278 1.16667 4.66667 1.16667C4.18056 1.16667 3.76736 1.33681 3.42708 1.67708C3.08681 2.01736 2.91667 2.43056 2.91667 2.91667V4.08333ZM1.16667 11.0833V5.25V11.0833Z"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 8 9"><path d="M7.79883 0.240234C5.88867 2.9668 3.92578 5.49023 1.91016 7.81055C1.75781 7.98633 1.625 8.07422 1.51172 8.07422C1.38281 8.07422 1.15039 7.73438 0.814453 7.05469C0.271484 5.95703 0 5.30078 0 5.08594C0 5.00781 0.0527344 4.91602 0.158203 4.81055C0.384766 4.57227 0.544922 4.45312 0.638672 4.45312C0.724609 4.45312 0.816406 4.58984 0.914062 4.86328C1.17188 5.55859 1.44336 6.17773 1.72852 6.7207C3.70508 4.7207 5.66016 2.48047 7.59375 0L7.79883 0.240234Z"/></symbol>
+  <symbol id="i-prev" viewBox="0 0 7 10"><path d="M5 10L0 5L5 0L6.16667 1.16667L2.33333 5L6.16667 8.83333L5 10Z"/></symbol>
+  <symbol id="i-next" viewBox="0 0 7 10"><path d="M3.83333 5L0 1.16667L1.16667 0L6.16667 5L1.16667 10L0 8.83333L3.83333 5Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 15 15"><path d="M2.86875 14.25L4.0875 8.98125L0 5.4375L5.4 4.96875L7.5 0L9.6 4.96875L15 5.4375L10.9125 8.98125L12.1313 14.25L7.5 11.4563L2.86875 14.25Z"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 12 8"><path d="M6 7.4L0 1.4L1.4 0L6 4.6L10.6 0L12 1.4L6 7.4Z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l2.4 7.1L22 12l-7.6 2.9L12 22l-2.4-7.1L2 12l7.6-2.9L12 2z"/></symbol>
+</svg>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container">
+    <a class="brand" href="#top" aria-label="ExecutiveBrand home">
+      <span class="brand-mark"><svg class="ic" width="20" height="12"><use href="#i-trend"/></svg></span>
+      <span class="brand-name">ExecutiveBrand</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="active" href="#top">Home</a>
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faqs">FAQs</a>
+    </nav>
+    <a class="head-cta js-pay" href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener noreferrer">Get Your ₹1 Audit →</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="badge"><i></i><span>YOUR LINKEDIN GROWTH PARTNER</span></div>
+      <h1>From LinkedIn<br>Nobody to <span class="grad">LinkedIn<br>Somebody.</span></h1>
+      <p class="lead">You have the experience. You have the expertise. Now, it's time the right people on LinkedIn noticed it. We help you build a powerful personal brand through smart strategy, compelling content, and consistent LinkedIn management—so you can focus on what you do best while we make your presence count.</p>
+      <div class="cta-row">
+        <a class="btn btn-navy" href="#contact">Let's Grow My LinkedIn →</a>
+        <a class="btn btn-ghost js-pay" href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener noreferrer"><span class="dot"></span>Get a ₹1 LinkedIn Audit</a>
+      </div>
+      <div class="trust">
+        <div class="avatars">
+          <span class="av" style="background:#141b2c;color:#c4f269">AR</span>
+          <span class="av" style="background:#316bf3;color:#fff">SK</span>
+          <span class="av" style="background:#2b313c;color:#ecf1ff">TN</span>
+        </div>
+        <p class="trust-text"><b>Strategy. Content. Consistency.</b> Everything your LinkedIn needs to grow.</p>
+      </div>
+    </div>
+
+    <div class="mock" aria-hidden="true">
+      <div class="mock-badge"><svg class="ic" width="14" height="14"><use href="#i-spark"/></svg>Your Growth Era Starts Here ✦</div>
+      <div class="mock-main">
+        <div class="banner"><span class="mono">Executive Brand Advisory</span><svg class="ic" width="30" height="18"><use href="#i-trend-big"/></svg></div>
+        <div class="prof">
+          <div class="prof-top">
+            <div class="avatar"><div>AR</div></div>
+            <span class="pill"><svg class="ic" width="13" height="12"><use href="#i-verified"/></svg>Profile Optimised</span>
+          </div>
+          <h3>Alex Rivera <small>★ Top Voice</small></h3>
+          <div class="role">Founder &amp; Strategic Advisory Partner</div>
+          <p class="bio">Helping high-growth founders turn industry expertise into high-ticket pipeline and category authority.</p>
+          <div class="stats"><span><b>14,800+</b> followers</span><span>•</span><span><b>500+</b> connections</span></div>
+        </div>
+      </div>
+      <div class="mock-post">
+        <div class="post-h"><span class="post-av">AR</span><div><b>Alex Rivera • 1st</b><span>Strategic Thought Leader • 3h ago</span></div></div>
+        <p class="quote">"Your personal brand is your permanent enterprise asset. When you own your narrative, clients pitch you."</p>
+        <div class="post-f"><span class="like"><svg class="ic" width="12" height="12"><use href="#i-like"/></svg>342 likes</span><span>89 comments</span><span>24 reposts</span></div>
+      </div>
+      <div class="mock-an">
+        <div class="an-h"><span>Analytics Snapshot (90 days)</span><svg class="ic" width="13" height="10"><use href="#i-insights"/></svg></div>
+        <div class="an-g">
+          <div class="an-c"><b>+126%</b><span>Profile Views</span></div>
+          <div class="an-c"><b>+84%</b><span>Engagement</span></div>
+          <div class="an-c"><b>+210%</b><span>Reach</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics" id="results">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="container">
+    <div class="center">
+      <div class="eyebrow" style="color:var(--lime)">PROVEN INDUSTRY TRACK RECORD</div>
+      <h2 class="h2">Good LinkedIn Growth Is More Than Just Numbers.</h2>
+      <p class="lead">It's about getting noticed by the right people, starting meaningful conversations, and turning your expertise into opportunities.</p>
+    </div>
+    <div class="m-grid">
+      <div class="m-card"><div class="num">120+</div><h4>Personal Brands Built</h4><p>C-level executives, founders, and specialized domain consultants.</p></div>
+      <div class="m-card"><div class="num">4,500+</div><h4>Content Pieces Created</h4><p>Authentic, ghostwritten thought leadership that commands authority.</p></div>
+      <div class="m-card"><div class="num">18M+</div><h4>Impressions Generated</h4><p>Organic reach engineered strictly through high-signal positioning.</p></div>
+      <div class="m-card"><div class="num">340%</div><h4>Average Pipeline Growth</h4><p>Turning organic profile traffic into qualified B2B inbound leads.</p></div>
+    </div>
+    <div class="niches">
+      <span class="lbl">Advisory tailored for:</span>
+      <span class="niche">Founders</span><span class="niche">Entrepreneurs</span><span class="niche">Consultants</span><span class="niche">Coaches</span><span class="niche">Industry Experts</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="s-head">
+      <div><div class="eyebrow">DONE-FOR-YOU ARCHITECTURE</div><h2 class="h2">How We Build Your Executive Presence.</h2></div>
+      <p>A seamless three-pillar framework designed to preserve your executive time while multiplying your reach exponentially.</p>
+    </div>
+    <div class="s-grid">
+      <article class="s-card">
+        <div>
+          <div class="s-ico"><svg class="ic" width="20" height="20"><use href="#i-compass"/></svg></div>
+          <div class="pillar">PILLAR 01</div>
+          <h3>Executive Strategy</h3>
+          <p>We extract your signature perspective, map target decision-makers, and define your differentiated industry positioning so you never sound generic.</p>
+          <ul>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>Custom Positioning &amp; Niche Definition</li>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>High-Value Audience Mapping</li>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>Executive Voice Discovery Session</li>
+          </ul>
+        </div>
+        <a class="s-link" href="#contact">Read Advisory Framework →</a>
+      </article>
+      <article class="s-card">
+        <div>
+          <div class="s-ico"><svg class="ic" width="18" height="16"><use href="#i-edit"/></svg></div>
+          <div class="pillar">PILLAR 02</div>
+          <h3>High-Impact Scripting</h3>
+          <p>Compelling, scroll-stopping thought leadership written precisely in your personal cadence. High resonance, zero corporate fluff or generic AI phrasing.</p>
+          <ul>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>Proven Viral Hook Engineering</li>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>Case Studies &amp; Teardown Formats</li>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>Custom Carousels &amp; Visual Direction</li>
+          </ul>
+        </div>
+        <a class="s-link" href="#testimonials">Explore Writing Samples →</a>
+      </article>
+      <article class="s-card">
+        <div>
+          <div class="s-ico"><svg class="ic" width="20" height="20"><use href="#i-sync"/></svg></div>
+          <div class="pillar">PILLAR 03</div>
+          <h3>Complete Management</h3>
+          <p>100% turnkey execution. From scheduling and profile optimization to proactive inbound conversation ignition and detailed weekly growth reports.</p>
+          <ul>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>Profile Conversion Optimisation</li>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>Strategic Comment Moderation</li>
+            <li><svg class="ic" width="12" height="12"><use href="#i-check-circle"/></svg>Bi-Weekly KPI &amp; Pipeline Audits</li>
+          </ul>
+        </div>
+        <a class="s-link" href="#faqs">View Management SLA →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="contact" id="contact">
+  <div class="container c-grid">
+    <div class="c-left">
+      <div class="badge"><span style="color:var(--blue)">LET'S GET TO KNOW YOU</span></div>
+      <h2 class="h2">Your Next Big Opportunity Could Start With a Conversation.</h2>
+      <p class="lead">Whether you want to build investor conviction, attract top-tier executive talent, or generate consistent enterprise leads, tell us where you are today.</p>
+      <div class="vp">
+        <div class="vp-item"><div class="vp-ico"><svg class="ic" width="20" height="20"><use href="#i-target"/></svg></div><div><h4>Personalised Growth Strategy</h4><p>No cookie-cutter templates. Every framework is engineered around your category objectives.</p></div></div>
+        <div class="vp-item"><div class="vp-ico"><svg class="ic" width="22" height="19"><use href="#i-people"/></svg></div><div><h4>Content That Sounds Like You</h4><p>We preserve your voice, convictions, and leadership nuances so your peers recognize you instantly.</p></div></div>
+        <div class="vp-item"><div class="vp-ico"><svg class="ic" width="16" height="20"><use href="#i-bolt"/></svg></div><div><h4>Consistent Brand Building</h4><p>Stop ghosting your network. We install an unshakeable editorial cadence you don't have to manage.</p></div></div>
+      </div>
+    </div>
+
+    <div class="card-form">
+      <form id="leadForm" novalidate>
+        <div class="field">
+          <label for="name">Full Name *</label>
+          <input id="name" name="name" type="text" placeholder="e.g. Maya Patel" autocomplete="name" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="email">Work Email *</label>
+            <input id="email" name="email" type="email" placeholder="maya@company.com" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number *</label>
+            <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" autocomplete="tel" required>
+          </div>
+        </div>
+        <button class="submit" id="submitBtn" type="submit">Let's Talk About My Growth →</button>
+        <div class="status" id="formStatus" role="status" aria-live="polite"></div>
+        <div class="privacy"><svg class="ic" width="9" height="12"><use href="#i-lock"/></svg>Your details stay private. No spam, just a conversation.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="glow g1"></div>
+  <div class="container">
+    <div class="center">
+      <div class="eyebrow" style="color:var(--lime)">YOUR FIRST STEP TO BETTER LINKEDIN GROWTH</div>
+      <h2 class="h2">Not Sure What's Holding Your LinkedIn Back? Let's Find Out.</h2>
+      <p class="lead">Get a rigorous, forensic breakdown of your profile positioning and content velocity for less than a cup of chai.</p>
+    </div>
+    <div class="o-card">
+      <div class="o-grid">
+        <div class="o-left">
+          <span class="o-tag">✦ A SPECIAL INTRODUCTORY OFFER</span>
+          <div>
+            <h3>Comprehensive 1-on-1 Profile Audit</h3>
+            <div class="price"><span class="big">₹1</span><span class="was">Regular ₹4,999</span><span class="off">99.9% OFF</span></div>
+          </div>
+          <ul class="check">
+            <li><span class="tk"><svg class="ic" width="8" height="9"><use href="#i-tick"/></svg></span><span><b>Profile Optimisation Review:</b> Banner, picture &amp; social proof analysis.</span></li>
+            <li><span class="tk"><svg class="ic" width="8" height="9"><use href="#i-tick"/></svg></span><span><b>Headline &amp; Bio Feedback:</b> High-intent conversion messaging audit.</span></li>
+            <li><span class="tk"><svg class="ic" width="8" height="9"><use href="#i-tick"/></svg></span><span><b>Content Positioning Analysis:</b> Algorithmic reach &amp; hook score.</span></li>
+            <li><span class="tk"><svg class="ic" width="8" height="9"><use href="#i-tick"/></svg></span><span><b>Growth Opportunity Matrix:</b> High-ticket inbound pipeline triggers.</span></li>
+            <li><span class="tk"><svg class="ic" width="8" height="9"><use href="#i-tick"/></svg></span><span><b>Actionable PDF Action Plan:</b> Immediate 7-day tactical improvements.</span></li>
+          </ul>
+          <a class="btn btn-lime js-pay" href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener noreferrer" style="padding:16px 32px">Get My ₹1 LinkedIn Audit →</a>
+        </div>
+        <div class="report" aria-hidden="true">
+          <div class="rep-h"><div class="dots"><i style="background:#ba1a1a"></i><i style="background:#c4f269"></i><i style="background:#0051d5"></i></div><span>REPORT_V2.0</span></div>
+          <div class="gauges">
+            <div class="g-row"><div class="t"><span>Profile Conversion Strength</span><span style="color:var(--lime)">92 / 100</span></div><div class="bar"><i style="width:92%;background:#c4f269"></i></div></div>
+            <div class="g-row"><div class="t"><span>Headline Hook Impact</span><span style="color:#dbe1ff">88 / 100</span></div><div class="bar"><i style="width:88%;background:#dbe1ff"></i></div></div>
+            <div class="g-row"><div class="t"><span>Inbound Intent Alignment</span><span style="color:var(--lime)">95 / 100</span></div><div class="bar"><i style="width:95%;background:#c4f269"></i></div></div>
+          </div>
+          <div class="insight"><b>Key Insight:</b> Current headline targets generalists. Repositioning toward Series-A founders will increase inbound DM conversion by ~2.8x.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi" id="testimonials">
+  <div class="container">
+    <div class="t-head">
+      <div><div class="eyebrow">KIND WORDS, REAL EXPERIENCES</div><h2 class="h2">Don't Just Take Our Word for It.</h2></div>
+      <div class="nav-btns">
+        <button type="button" id="tPrev" aria-label="Previous testimonial"><svg class="ic" width="7" height="10"><use href="#i-prev"/></svg></button>
+        <button type="button" id="tNext" aria-label="Next testimonial"><svg class="ic" width="7" height="10"><use href="#i-next"/></svg></button>
+      </div>
+    </div>
+    <div class="t-track" id="tTrack">
+      <article class="t-card">
+        <div><div class="stars"><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg></div>
+        <blockquote>"Before ExecutiveBrand, I hadn't posted in 8 months because I was terrified of sounding like generic tech advice. In 90 days, we've closed $180k in advisory pipeline solely from executive DMs."</blockquote></div>
+        <div class="t-foot"><div class="t-av" style="background:#141b2c;color:#c4f269">DH</div><div><div class="t-name">Devan Harish <svg class="ic" width="13" height="12"><use href="#i-verified"/></svg></div><div class="t-role">SaaS Founder, Seed to Series A</div></div></div>
+      </article>
+      <article class="t-card">
+        <div><div class="stars"><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg></div>
+        <blockquote>"The ₹1 Audit opened my eyes. Within 48 hours of implementing their headline tweaks, our inbound connection requests from Tier-1 venture funds surged by 3x. Now they manage my full presence."</blockquote></div>
+        <div class="t-foot"><div class="t-av" style="background:#316bf3;color:#fff">SK</div><div><div class="t-name">Sanya Kapoor <svg class="ic" width="13" height="12"><use href="#i-verified"/></svg></div><div class="t-role">FinTech Co-Founder &amp; Angel</div></div></div>
+      </article>
+      <article class="t-card">
+        <div><div class="stars"><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg><svg class="ic" width="15" height="15"><use href="#i-star"/></svg></div>
+        <blockquote>"I spend exactly 25 minutes every second Friday on an interview with their writer. They turn it into 10 world-class posts. My peer executives constantly ask who is ghostwriting for me."</blockquote></div>
+        <div class="t-foot"><div class="t-av" style="background:#141b2c;color:#c4f269">NV</div><div><div class="t-name">Nikhil Varma <svg class="ic" width="13" height="12"><use href="#i-verified"/></svg></div><div class="t-role">Managing Partner, Nexus Advisory</div></div></div>
+      </article>
+    </div>
+    <div class="t-link"><span>Want to be our next success story?</span><a href="#contact">Let's Build Your Brand →</a></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faqs">
+  <div class="container faq-grid">
+    <div class="faq-left">
+      <div class="eyebrow">GOT QUESTIONS?</div>
+      <h2 class="h2">Everything You Might Be Wondering About.</h2>
+      <p class="lead">Clear, transparent answers on how we collaborate with executives, handle ghostwriting authenticity, and deliver measurable business ROI.</p>
+      <div class="help">
+        <h4>Still have a specific question?</h4>
+        <p>Speak directly with our strategy director on a quick 15-minute briefing.</p>
+        <a href="#contact">Contact Strategy Team →</a>
+      </div>
+    </div>
+    <div class="acc" id="acc">
+      <div class="acc-item open">
+        <button class="acc-q" type="button" aria-expanded="true"><span>How does executive ghostwriting work without losing my authentic voice?</span><svg class="ic" width="12" height="8"><use href="#i-chev"/></svg></button>
+        <div class="acc-a">We conduct a detailed voice onboarding and regular 30-minute bi-weekly interviews. We capture your real conversational cadence, real case studies, and personal frameworks. Nothing goes live without your final approval.</div>
+      </div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false"><span>How much time is required from me each week?</span><svg class="ic" width="12" height="8"><use href="#i-chev"/></svg></button></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false"><span>Why is the LinkedIn Audit priced at just ₹1?</span><svg class="ic" width="12" height="8"><use href="#i-chev"/></svg></button></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false"><span>How long does it take to see tangible results and inbound leads?</span><svg class="ic" width="12" height="8"><use href="#i-chev"/></svg></button></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false"><span>Do you use generic AI tools to generate content?</span><svg class="ic" width="12" height="8"><use href="#i-chev"/></svg></button></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false"><span>What if I have an existing company page instead of personal profile?</span><svg class="ic" width="12" height="8"><use href="#i-chev"/></svg></button></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false"><span>Is my confidential industry data and client identity safe?</span><svg class="ic" width="12" height="8"><use href="#i-chev"/></svg></button></div>
+      <div class="acc-item"><button class="acc-q" type="button" aria-expanded="false"><span>What is the minimum engagement commitment?</span><svg class="ic" width="12" height="8"><use href="#i-chev"/></svg></button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="f-cta">
+      <div class="eyebrow">CLAIM YOUR MARKET AUTHORITY</div>
+      <h2 class="h2">Let's Make You Impossible to Ignore on LinkedIn.</h2>
+      <p class="lead">Stop letting lesser-qualified competitors dominate your category narrative. Build the presence your expertise deserves.</p>
+      <a class="btn btn-lime" href="#contact">Start Your LinkedIn Growth Journey →</a>
+    </div>
+    <div class="f-main">
+      <div class="f-cols">
+        <div class="f-brand">
+          <div class="f-logo"><span class="m"><svg class="ic" width="15" height="9"><use href="#i-trend-sm"/></svg></span><span>ExecutiveBrand</span></div>
+          <p>High-conversion executive personal branding and content strategy advisory. Built exclusively for founders, C-suite executives, and the top 0.1% thought leaders.</p>
+          <div class="social"><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="X (Twitter)">𝕏</a></div>
+        </div>
+        <div class="f-col">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#results">Case Studies</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#offer">₹1 Audit Program</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="f-col">
+          <h5>Get In Touch</h5>
+          <p>Direct executive desk inquiries and strategic advisory partnerships:</p>
+          <a class="mail" href="mailto:partnerships@executivebrand.co">partnerships@executivebrand.co</a>
+          <small>Response turnaround within 12 business hours.</small>
+        </div>
+      </div>
+      <div class="copy">
+        <span>© 2025 ExecutiveBrand Advisory. All rights reserved. Built for top 0.1% thought leaders.</span>
+        <div><a href="#">Privacy Policy</a><span>•</span><a href="#">Terms of Engagement</a></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUR7Y_P_o-XHE0ck1ITYEwA6HrMIKqxIDw1pJMezSno1ALtGQxpGi3NvAJoFTI3JaPEQ/exec";
+
+  var form = document.getElementById("leadForm");
+  var btn = document.getElementById("submitBtn");
+  var statusEl = document.getElementById("formStatus");
+  var btnLabel = btn.textContent;
+
+  function showSuccess() {
+    statusEl.className = "status ok";
+    statusEl.textContent = "Thank you! We've received your details and will be in touch shortly.";
+    form.reset();
+    btn.disabled = false;
+    btn.textContent = btnLabel;
+  }
+
+  function showError() {
+    statusEl.className = "status bad";
+    statusEl.textContent = "Something went wrong. Please check your connection and try again.";
+    btn.disabled = false;
+    btn.textContent = btnLabel;
+  }
+
+  form.addEventListener("submit", function (ev) {
+    ev.preventDefault();
+    statusEl.className = "status";
+    statusEl.textContent = "";
+
+    var name = form.name.value.trim();
+    var email = form.email.value.trim();
+    var phone = form.phone.value.trim();
+
+    var ok = true;
+    [["name", name], ["email", email], ["phone", phone]].forEach(function (p) {
+      var el = document.getElementById(p[0]);
+      var bad = !p[1];
+      if (p[0] === "email" && p[1] && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p[1])) bad = true;
+      el.classList.toggle("err", bad);
+      if (bad) ok = false;
+    });
+    if (!ok) {
+      statusEl.className = "status bad";
+      statusEl.textContent = "Please fill in your name, a valid email and your phone number.";
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+
+    var url = SCRIPT_URL + "?" + new URLSearchParams({ name: name, email: email, phone: phone });
+    fetch(url, { method: "GET", mode: "no-cors" })
+      .then(function () { showSuccess(); })
+      .catch(function () { showError(); });
+  });
+
+  ["name", "email", "phone"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", function (e) { e.target.classList.remove("err"); });
+  });
+
+  // FAQ accordion (only items that have an answer panel can expand)
+  document.querySelectorAll(".acc-item").forEach(function (item) {
+    var q = item.querySelector(".acc-q");
+    q.addEventListener("click", function () {
+      if (!item.querySelector(".acc-a")) return;
+      var open = item.classList.toggle("open");
+      q.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+
+  // Testimonial slider buttons
+  var track = document.getElementById("tTrack");
+  function slide(dir) {
+    var card = track.querySelector(".t-card");
+    var step = card ? card.getBoundingClientRect().width + 16 : 320;
+    track.scrollBy({ left: dir * step, behavior: "smooth" });
+  }
+  document.getElementById("tPrev").addEventListener("click", function () { slide(-1); });
+  document.getElementById("tNext").addEventListener("click", function () { slide(1); });
+
+  // Active nav link on scroll
+  var links = document.querySelectorAll(".nav a");
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute("href")] = a; });
+  var ids = ["#top", "#services", "#results", "#testimonials", "#faqs"];
+  window.addEventListener("scroll", function () {
+    var cur = "#top", y = window.scrollY + 120;
+    ids.forEach(function (id) {
+      var el = id === "#top" ? document.body : document.querySelector(id);
+      if (el && id !== "#top" && el.offsetTop <= y) cur = id;
+    });
+    links.forEach(function (a) { a.classList.toggle("active", a === map[cur]); });
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
